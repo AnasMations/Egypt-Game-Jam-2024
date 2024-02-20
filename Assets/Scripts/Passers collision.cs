@@ -14,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        PeaceMeter.current = PeaceMeter.current - 5;
+       
     }
 
     //private void OnTriggerEnter2D(Collider2D collision)
@@ -30,10 +30,9 @@ public class NewBehaviourScript : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         string collidertag = collision.gameObject.tag;
-        print("hello");
         if (collidertag == "Passers")
         {
-            print("hello");
+            print("Hit Person");
             PeaceMeter.current = PeaceMeter.current - 5;
         }
     }
