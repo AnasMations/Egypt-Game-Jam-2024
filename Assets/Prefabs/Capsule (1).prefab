@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 9031689426618235092}
   - component: {fileID: 1013010318214142844}
   - component: {fileID: 6931062441910729513}
+  - component: {fileID: 924490575237552479}
   m_Layer: 0
   m_Name: Capsule (1)
   m_TagString: Passers
@@ -135,3 +136,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 2
+--- !u!114 &924490575237552479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3198722139519516820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82d409e32b62cdf4c80e4ac0ed5375d8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioSources:
+  - {fileID: 8300000, guid: ca22e77ccb7b21848b4360b2082fd626, type: 3}
+  - {fileID: 8300000, guid: b587a8981d16e1c45a79c4108d1f7af7, type: 3}
+  - {fileID: 8300000, guid: 0018cba5a055a8147921ae41897ee4da, type: 3}
+  - {fileID: 8300000, guid: 323c60fb57605294c9d0c0f7b2b0c7c4, type: 3}
+  - {fileID: 8300000, guid: 739a2340e36da7b4fbf8dc65e26d27eb, type: 3}
+  - {fileID: 0}

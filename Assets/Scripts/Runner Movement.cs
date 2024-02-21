@@ -40,7 +40,7 @@ public class RunnerMovement : MonoBehaviour
         }
 
         //Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
-        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, 0.2f);
+        Vector3 move = new Vector3(Input.GetAxis("Horizontal"), -0.1f, 0.2f);
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
@@ -61,5 +61,6 @@ public class RunnerMovement : MonoBehaviour
         playerVelocity.y += gravityValue * Time.deltaTime;
         controller.Move(playerVelocity * Time.deltaTime);
         transform.rotation = Quaternion.Euler(transform.rotation.x, 0, 0);
+
     }
 }
