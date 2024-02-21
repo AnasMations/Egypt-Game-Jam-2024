@@ -22,6 +22,7 @@ public class PlayerExit : MonoBehaviour
         if (collidertag == "Exit")
         {
             print("HitExit");
+            //Transition to the next level
         }
     }
 }

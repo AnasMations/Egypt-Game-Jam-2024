@@ -4,36 +4,33 @@ using UnityEngine;
 
 public class NewBehaviourScript : MonoBehaviour
 {
+    [SerializeField] Losecondition lose;
     [SerializeField] ProgressBar PeaceMeter;
     // Start is called before the first frame update
     void Start()
     {
-        
     }
 
     // Update is called once per frame
     void Update()
     {
        
+       
     }
-
-    //private void OnTriggerEnter2D(Collider2D collision)
-    //{
-    //    string collidertag = collision.gameObject.tag;
-    //    print("hello");
-    //    if (collidertag == "Passers")
-    //    {
-    //        print("hello");
-    //        PeaceMeter.current = PeaceMeter.current - 5;
-    //    }
-    //}
     void OnCollisionEnter(Collision collision)
     {
-        string collidertag = collision.gameObject.tag;
-        if (collidertag == "Passers")
+        //After detecting the passers
+        //We Check if they truly passers or not
+        //Then We deduct from the peace meter
+        //until the peace meter is depleted which we can know from the Lose condition.cs
+        if (!lose.haslost)
         {
-            print("Hit Person");
-            PeaceMeter.current = PeaceMeter.current - 5;
+            string collidertag = collision.gameObject.tag;
+            if (collidertag == "Passers")
+            {
+                print("Hit Person");
+                PeaceMeter.current = PeaceMeter.current - 5;
+            }
         }
     }
 }

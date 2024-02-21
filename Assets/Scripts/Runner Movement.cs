@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class RunnerMovement : MonoBehaviour
@@ -9,12 +10,28 @@ public class RunnerMovement : MonoBehaviour
     private bool groundedPlayer;
     private float playerSpeed = 20.0f;
     private float gravityValue = -9.81f;
+    [SerializeField] Losecondition lost;
+    [SerializeField] Rigidbody rb;
     private void Start()
     {
         controller = gameObject.AddComponent<CharacterController>();
     }
 
     void Update()
+    {
+        if(!lost.haslost)
+        {
+            Moving();
+        }
+        else
+        {
+            //transform.rotation = Quaternion.Euler(0, 0, 0);
+            rb.isKinematic = true;
+        }
+        
+    }
+
+    private void Moving()
     {
         groundedPlayer = controller.isGrounded;
         if (groundedPlayer && playerVelocity.y < 0)
@@ -27,7 +44,7 @@ public class RunnerMovement : MonoBehaviour
 
         controller.Move(move * Time.deltaTime * playerSpeed);
 
-        
+
 
 
         if (move != Vector3.zero)
