@@ -5,12 +5,14 @@ using UnityEngine;
 public class SpawnWalkers : MonoBehaviour
 {
     public GameObject walkerPrefab;
-    // private int count;
+    [SerializeField]
+    public GameObject GameWinScreen;
     // Update is called once per frame
     void Start()
     {
         
         StartCoroutine(Spawner());
+        StartCoroutine(Timer());
     }
 
     IEnumerator Spawner()
@@ -18,7 +20,7 @@ public class SpawnWalkers : MonoBehaviour
 
         WaitForSeconds wait = new WaitForSeconds(0.5f);
  
-        for(int count = 0; count < 1000; count++) 
+        for(int count = 0; count < 50; count++) 
         {
             Vector3 randomSpawnPosition = new Vector3(Random.Range(-5, 5), 1, Random.Range(15, 20));
 
@@ -26,9 +28,20 @@ public class SpawnWalkers : MonoBehaviour
             yield return wait; 
 
         }
-    
+        
         
     }
+    IEnumerator Timer()
+    {
+        WaitForSeconds wait = new WaitForSeconds(25f);
+        yield return wait; 
+
+        Time.timeScale = 0f;
+        GameWinScreen.SetActive(true);
+
+
+    }
+    
 
 
 }
