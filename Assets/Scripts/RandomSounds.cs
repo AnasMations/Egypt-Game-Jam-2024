@@ -15,7 +15,7 @@ public class RandomSounds : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _as.clip = audioClipArray[Random.Range(0,30)];
+        _as.clip = audioClipArray[Random.Range(0,50)];
         _as.PlayOneShot (_as.clip); 
     }
 

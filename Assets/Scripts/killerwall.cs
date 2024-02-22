@@ -10,7 +10,7 @@ public class killerwall : MonoBehaviour {
     void Update()
     {
         // Move the object forward along its z axis 1 unit/second.
-        transform.Translate((7 * Vector3.forward) * Time.deltaTime);
+        transform.Translate((5 * Vector3.forward) * Time.deltaTime);
             }
     public void OnTriggerEnter(Collider collider)
     {
