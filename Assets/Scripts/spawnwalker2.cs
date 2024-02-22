@@ -16,7 +16,7 @@ public class spawnWalker2 : MonoBehaviour
     IEnumerator Spawner()
     {
 
-        WaitForSeconds wait = new WaitForSeconds(1f);
+        WaitForSeconds wait = new WaitForSeconds(1.1f);
  
         for(int count = 0; count < 80; count++) 
         {

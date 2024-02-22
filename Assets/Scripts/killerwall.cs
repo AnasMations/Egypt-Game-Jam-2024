@@ -5,12 +5,17 @@ using UnityEngine;
 
 public class killerwall : MonoBehaviour {
 
-
-    
+    private float speed;
+    void Awake()
+    {
+     speed = Random.Range(2.0f, 4.5f);
+    }
     void Update()
     {
+        
+
         // Move the object forward along its z axis 1 unit/second.
-        transform.Translate((5 * Vector3.forward) * Time.deltaTime);
+        transform.Translate((speed * Vector3.forward) * Time.deltaTime);
             }
     public void OnTriggerEnter(Collider collider)
     {
