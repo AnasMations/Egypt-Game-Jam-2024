@@ -6,6 +6,7 @@ public class PlayerBalance : MonoBehaviour
 {
     public float movementSpeed = 5f;
     public float jumpForce = 10f;
+    public AudioSource walkSound;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -17,6 +18,7 @@ public class PlayerBalance : MonoBehaviour
 
     void Update()
     {
+
         // Check if the player is grounded
         CheckGrounded();
 
@@ -30,6 +32,18 @@ public class PlayerBalance : MonoBehaviour
         if (Input.GetButtonDown("Jump") && isGrounded)
         {
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
+        }
+
+        if(horizontalInput != 0 && isGrounded)
+        {
+            if(!walkSound.isPlaying)
+            {
+                walkSound.Play();
+            }
+        }
+        else
+        {
+            walkSound.Stop();
         }
     }
 
