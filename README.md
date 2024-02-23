@@ -1,5 +1,5 @@
-# Egypt-Game-Jam-2024
-## Made in 3 days
+# Metro Elsalam - مترو السلام
+## Made in 3 days for ITI Egypt-Game-Jam-2024
 ## Team Members:
 - Anas Ahmed - Programmer 💻
 - Ziad Medhat - Programmer 💻
