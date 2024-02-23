@@ -16,15 +16,9 @@ public class spawnWalker2 : MonoBehaviour
     IEnumerator Spawner()
     {
 
-<<<<<<< Updated upstream
-        WaitForSeconds wait = new WaitForSeconds(1.1f);
- 
-        for(int count = 0; count < 80; count++) 
-=======
         WaitForSeconds wait = new WaitForSeconds(1f);
 
         for (int count = 0; count < 80; count++)
->>>>>>> Stashed changes
         {
             Vector3 randomSpawnPosition = new Vector3(Random.Range(-4, 4), 1, Random.Range(75, 60));
 
