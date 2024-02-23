@@ -5,14 +5,12 @@ using UnityEngine;
 public class SpawnWalkers : MonoBehaviour
 {
     public GameObject walkerPrefab;
-    public GameObject Win;
 
     void Start()
     {
 
 
         StartCoroutine(Spawner());
-        StartCoroutine(Timer());
     }
 
     IEnumerator Spawner()
@@ -28,21 +26,6 @@ public class SpawnWalkers : MonoBehaviour
             yield return wait;
 
         }
-
-
-    }
-
-    IEnumerator Timer()
-    {
-
-        WaitForSeconds wait = new WaitForSeconds(60f);
-        yield return wait;
-
-        Time.timeScale = 0f;
-        Win.SetActive(true);
-
-
-
 
 
     }

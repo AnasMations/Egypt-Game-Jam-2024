@@ -2,13 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Events;
 public class playerMovement : MonoBehaviour
 {
     public float speed;
     private float Move;
     private Rigidbody rb;
     [SerializeField]
-    public GameObject GameOverScreen;
+    public Slider slider;
+    public UnityEvent OnLose;
 
     // Start is called before the first frame update
     void Start()
@@ -28,8 +30,12 @@ public class playerMovement : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("walker"))
         {
-            Time.timeScale = 0f;
-            GameOverScreen.SetActive(true);
+            slider.value = slider.value - 0.34f;
+            if (slider.value <= 0)
+            {
+                OnLose?.Invoke();
+                Time.timeScale = 0f;
+            }
         }
     }
 
