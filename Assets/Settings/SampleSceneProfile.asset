@@ -68,7 +68,7 @@ MonoBehaviour:
     m_Value: {x: 0.5, y: 0.5}
   intensity:
     m_OverrideState: 1
-    m_Value: 0.333
+    m_Value: 0.213
   smoothness:
     m_OverrideState: 1
     m_Value: 0.419
@@ -93,7 +93,7 @@ MonoBehaviour:
     m_Value: {x: 1, y: 0.97083133, z: 0.91086984, w: 0}
   midtones:
     m_OverrideState: 1
-    m_Value: {x: 1, y: 0.9660445, z: 0.8917135, w: 0}
+    m_Value: {x: 1, y: 0.8573202, z: 0.8508669, w: 0}
   highlights:
     m_OverrideState: 1
     m_Value: {x: 1, y: 1, z: 1, w: 0}
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ccf1aba9553839d41ae37dd52e9ebcce, type: 3}
   m_Name: MotionBlur
   m_EditorClassIdentifier: 
-  active: 1
+  active: 0
   mode:
     m_OverrideState: 1
     m_Value: 0
@@ -149,7 +149,7 @@ MonoBehaviour:
   active: 1
   distance:
     m_OverrideState: 1
-    m_Value: 0.239
+    m_Value: 1
   cropToFit:
     m_OverrideState: 1
     m_Value: 1
@@ -273,7 +273,7 @@ MonoBehaviour:
     m_Value: 0.2
   contrast:
     m_OverrideState: 1
-    m_Value: 36
+    m_Value: 18.5
   colorFilter:
     m_OverrideState: 1
     m_Value: {r: 0.97735846, g: 0.9173058, b: 0.78004265, a: 1}

@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PlayerExit : MonoBehaviour
 {
+    public UnityEvent OnExit;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,11 +18,11 @@ public class PlayerExit : MonoBehaviour
         
     }
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collider)
     {
-        string collidertag = collision.gameObject.tag;
-        if (collidertag == "Exit")
+        if (collider.CompareTag("Exit"))
         {
+            OnExit?.Invoke();
             print("HitExit");
             //Transition to the next level
         }

@@ -10,25 +10,15 @@ public class RunnerMovement : MonoBehaviour
     private bool groundedPlayer;
     private float playerSpeed = 20.0f;
     private float gravityValue = -9.81f;
-    [SerializeField] Losecondition lost;
     [SerializeField] Rigidbody rb;
     private void Start()
     {
         controller = gameObject.AddComponent<CharacterController>();
     }
 
-    void Update()
+    void FixedUpdate()
     {
-        if(!lost.haslost)
-        {
-            Moving();
-        }
-        else
-        {
-            //transform.rotation = Quaternion.Euler(0, 0, 0);
-            rb.isKinematic = true;
-        }
-        
+        Moving();        
     }
 
     private void Moving()
@@ -42,7 +32,7 @@ public class RunnerMovement : MonoBehaviour
         //Vector3 move = new Vector3(Input.GetAxis("Horizontal"), 0, Input.GetAxis("Vertical"));
         Vector3 move = new Vector3(Input.GetAxis("Horizontal"), -0.1f, 0.2f);
 
-        controller.Move(move * Time.deltaTime * playerSpeed);
+        controller.Move(move * Time.fixedDeltaTime * playerSpeed);
 
 
 
