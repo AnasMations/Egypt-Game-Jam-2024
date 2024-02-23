@@ -1,10 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Losecondition : MonoBehaviour
 {
-    [SerializeField] ProgressBar PeaceMeter;
+    [SerializeField] Slider PeaceMeter;
     public bool haslost;
 
     // Start is called before the first frame update
@@ -17,7 +18,7 @@ public class Losecondition : MonoBehaviour
     void Update()
     {
         //Checks whether the peace meter is depleted or not
-        if (PeaceMeter.current == 0)
+        if (PeaceMeter.value == 0)
         {
             haslost = true;
             lost(haslost);

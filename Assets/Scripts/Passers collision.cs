@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class NewBehaviourScript : MonoBehaviour
 {
     [SerializeField] Losecondition lose;
-    [SerializeField] ProgressBar PeaceMeter;
+    [SerializeField] Slider PeaceMeter;
     // Start is called before the first frame update
     void Start()
     {
@@ -29,7 +30,7 @@ public class NewBehaviourScript : MonoBehaviour
             if (collidertag == "Passers")
             {
                 print("Hit Person");
-                PeaceMeter.current = PeaceMeter.current - 5;
+                PeaceMeter.value = PeaceMeter.value - 0.05f;
             }
         }
     }

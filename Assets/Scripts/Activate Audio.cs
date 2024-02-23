@@ -15,7 +15,7 @@ public class ActivateAudio : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-       int audio = Random.Range(0, audioclips.Count);
+       int audio = Random.Range(0, audioclips.Count+30);
        audioclip = audioclips[audio];
        leobject = gameObject;
         isplaying = false;
