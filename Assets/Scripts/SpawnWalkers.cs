@@ -5,12 +5,18 @@ using UnityEngine;
 public class SpawnWalkers : MonoBehaviour
 {
     public GameObject walkerPrefab;
+<<<<<<< Updated upstream
     [SerializeField]
     public GameObject GameWinScreen;
     // Update is called once per frame
+=======
+    public GameObject Win;
+
+>>>>>>> Stashed changes
     void Start()
     {
-        
+
+
         StartCoroutine(Spawner());
         StartCoroutine(Timer());
     }
@@ -19,18 +25,39 @@ public class SpawnWalkers : MonoBehaviour
     {
 
         WaitForSeconds wait = new WaitForSeconds(0.85f);
+<<<<<<< Updated upstream
  
         for(int count = 0; count < 80; count++) 
+=======
+
+        for (int count = 0; count < 80; count++)
+>>>>>>> Stashed changes
         {
             Vector3 randomSpawnPosition = new Vector3(Random.Range(-5, 5), 1, Random.Range(15, 20));
 
             Instantiate(walkerPrefab, randomSpawnPosition, Quaternion.identity);
-            yield return wait; 
+            yield return wait;
 
         }
-        
-        
+
+
     }
+
+    IEnumerator Timer()
+    {
+
+        WaitForSeconds wait = new WaitForSeconds(60f);
+        yield return wait;
+
+        Time.timeScale = 0f;
+        Win.SetActive(true);
+
+
+
+
+
+    }
+<<<<<<< Updated upstream
     IEnumerator Timer()
     {
         WaitForSeconds wait = new WaitForSeconds(50f);
@@ -42,6 +69,8 @@ public class SpawnWalkers : MonoBehaviour
 
     }
     
+=======
+>>>>>>> Stashed changes
 
 
 }
