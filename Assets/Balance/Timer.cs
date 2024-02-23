@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.Events;
@@ -15,24 +14,26 @@ public class Timer : MonoBehaviour
     private void Start()
     {
         currentTime = countdownTime;
+        StartCoroutine(StartTimer());
     }
 
-    private void Update()
+    private IEnumerator StartTimer()
     {
-        // Update the timer
-        currentTime -= Time.deltaTime;
-
-        // Display the timer in minutes and seconds format
-        DisplayTime(currentTime);
-
-        // Check if the countdown has reached zero
-        if (currentTime <= 0f)
+        while (currentTime > 0f)
         {
-            onTimerEnd?.Invoke();
-            // Perform actions when the countdown reaches zero (e.g., end game, trigger an event)
-            Debug.Log("Time's up!");
-            currentTime = 0f; // Optional: Set the timer to zero to prevent negative values
+            // Display the timer in minutes and seconds format
+            DisplayTime(currentTime);
+
+            yield return new WaitForSeconds(1f); // Pause for one second
+
+            // Update the timer
+            currentTime--;
         }
+
+        // Countdown has reached zero
+        onTimerEnd?.Invoke();
+        Debug.Log("Time's up!");
+        currentTime = 0f; // Optional: Set the timer to zero to prevent negative values
     }
 
     private void DisplayTime(float time)

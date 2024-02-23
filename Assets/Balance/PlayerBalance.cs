@@ -7,6 +7,8 @@ public class PlayerBalance : MonoBehaviour
     public float movementSpeed = 5f;
     public float jumpForce = 10f;
     public AudioSource walkSound;
+    public Transform rigTansform;
+    public Animator animator;
 
     private Rigidbody rb;
     private bool isGrounded;
@@ -34,17 +36,36 @@ public class PlayerBalance : MonoBehaviour
             rb.AddForce(Vector3.up * jumpForce, ForceMode.Impulse);
         }
 
-        if(horizontalInput != 0 && isGrounded)
+        if (horizontalInput != 0 && isGrounded)
         {
-            if(!walkSound.isPlaying)
+
+            animator.SetTrigger("walkON");
+            if (!walkSound.isPlaying)
             {
                 walkSound.Play();
             }
         }
         else
         {
+            animator.SetTrigger("walkOFF");
             walkSound.Stop();
         }
+
+        // If player is moivng right, rotate right
+        if (horizontalInput > 0)
+        {
+            rigTansform.rotation = Quaternion.Euler(0, -90, 0);
+        }
+        // If player is moivng left, rotate left
+        else if (horizontalInput < 0)
+        {
+            rigTansform.rotation = Quaternion.Euler(0, 90, 0);
+        }
+        else
+        {
+            rigTansform.rotation = Quaternion.Euler(0, 0, 0);
+        }
+
     }
 
     void CheckGrounded()

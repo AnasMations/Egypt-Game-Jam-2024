@@ -140,3 +140,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 74bbfa1b6a25ce1428a44d6442f9c55d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  flashMaterial: {fileID: 2100000, guid: a1df5eac0ecf9b34bb9eda5ace5f49fa, type: 2}
+  flashDuration: 0.2
