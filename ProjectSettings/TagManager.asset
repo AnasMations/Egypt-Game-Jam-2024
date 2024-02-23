@@ -6,11 +6,12 @@ TagManager:
   tags:
   - Passers
   - Exit
+  - walker
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - post
   - Water
   - UI
   - 
